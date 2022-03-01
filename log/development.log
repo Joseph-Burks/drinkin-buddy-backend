@@ -1,0 +1,1972 @@
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220112232934)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220112232934"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-12 23:31:21.515082"], ["updated_at", "2022-01-12 23:31:21.515082"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2022-01-12 18:13:06 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/application_controller.rb:16: syntax error, unexpected integer literal, expecting ';' or '\n'
+    def logged_in?5-
+                  ^
+/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/application_controller.rb:19: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/application_controller.rb:16: syntax error, unexpected integer literal, expecting ';' or '\n'
+app/controllers/application_controller.rb:19: syntax error, unexpected `end', expecting end-of-input
+app/controllers/application_controller.rb:16: syntax error, unexpected integer literal, expecting ';' or '\n'
+app/controllers/application_controller.rb:19: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/favicon.ico" for ::1 at 2022-01-12 18:13:06 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for ::1 at 2022-01-12 18:13:36 -0600
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 31335ms (Allocations: 157732)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `logged_in?'
+app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Jobu"], ["password_digest", "$2a$12$CBCSUI/csvj2rJQGOwjWOeCHVDdhevUMWGDU9./8CJ.l25w.hQAP."], ["created_at", "2022-01-13 00:27:35.125905"], ["updated_at", "2022-01-13 00:27:35.125905"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Jobu"], ["password_digest", "$2a$12$QNEa4vBu7wcyO5UVZ3IOpOlgp5nAuoq.pCdE.6QqOwxhNOZbBFunu"], ["created_at", "2022-01-13 00:28:08.159818"], ["updated_at", "2022-01-13 00:28:08.159818"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/2" for ::1 at 2022-01-12 18:28:26 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/users" for ::1 at 2022-01-12 18:28:36 -0600
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 113)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/users" for ::1 at 2022-01-12 18:28:58 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 6029)
+
+
+Started GET "/users" for ::1 at 2022-01-12 18:29:53 -0600
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.9ms | Allocations: 4148)
+
+
+Started POST "/users?username=Megs&password=[FILTERED]" for ::1 at 2022-01-12 18:33:50 -0600
+  
+SyntaxError (/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/users_controller.rb:18: syntax error, unexpected local variable or method, expecting '}'
+..., only: [:id, :username]] token: JWT.encode({user_id: @user....
+...                          ^~~~~
+/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+...id: @user.id}, ENV["JWT_KEY"])}, status: :created, location:...
+...                              ^
+):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected local variable or method, expecting '}'
+app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected local variable or method, expecting '}'
+app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+Started POST "/users?username=Megs&password=[FILTERED]" for ::1 at 2022-01-12 18:34:37 -0600
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Megs", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 2ms (Allocations: 640)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  username
+               password
+               controller
+               action):
+  
+app/controllers/users_controller.rb:57:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users?user={username:%20%22Megan%22,%20password:%20%22password%22}" for ::1 at 2022-01-12 18:35:21 -0600
+Processing by UsersController#create as */*
+  Parameters: {"user"=>"{username: \"Megan\", password: \"password\"}"}
+Completed 500 Internal Server Error in 5ms (Allocations: 1285)
+
+
+  
+NoMethodError (undefined method `permit' for "{username: \"Megan\", password: \"password\"}":String):
+  
+app/controllers/users_controller.rb:57:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2022-01-12 18:37:00 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+"user": "{username: "Megan", password: "password"}"
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 1ms (Allocations: 119)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at ': "{username: "Megan", password: "password"}"'):
+  
+app/controllers/users_controller.rb:57:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2022-01-12 18:38:43 -0600
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (Allocations: 129)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  controller
+               action):
+  
+app/controllers/users_controller.rb:57:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2022-01-12 18:39:43 -0600
+  
+ActionDispatch::Http::MimeNegotiation::InvalidType ("\"application/json\"" is not a valid MIME type):
+  
+Started POST "/users" for ::1 at 2022-01-12 18:41:02 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+JSON.stringify({
+    user: {
+        username: "Megan",
+        password: "password"
+    }
+})
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (Allocations: 116)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at 'JSON.stringify({
+    user: {
+        username: "Megan",
+        password: "password"
+    }
+})'):
+  
+app/controllers/users_controller.rb:57:in `user_params'
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2022-01-12 18:42:44 -0600
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Megan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Megan"], ["password_digest", "$2a$12$0.K4rJyIBtBZG2uZ7pb/qu07sphC34unMetxuzqQLtD8QrGp4HJju"], ["created_at", "2022-01-13 00:42:44.953580"], ["updated_at", "2022-01-13 00:42:44.953580"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 323ms (Views: 0.8ms | ActiveRecord: 7.5ms | Allocations: 7863)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Jobu"], ["password_digest", "$2a$12$XTkLCr8D5BZDSzzBgl6eXu6sDwpO0oKWByWj89iVqLUTbSvjurbgK"], ["created_at", "2022-01-13 00:44:30.841222"], ["updated_at", "2022-01-13 00:44:30.841222"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for ::1 at 2022-01-12 18:44:40 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Megan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Megan"], ["password_digest", "$2a$12$B9rQSHfk.XUjPG13WME6SOG66WJpk9jBXPDF6CoOMhFZrRQ2ta9FO"], ["created_at", "2022-01-13 00:44:40.599566"], ["updated_at", "2022-01-13 00:44:40.599566"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 278ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 9423)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Jobu"], ["password_digest", "$2a$12$uroNWe49NWQ.b9H1fJIAWOIKNJ2ZZvtt9Vj2S7wzT.kVCNJY7Y3xG"], ["created_at", "2022-01-13 00:45:11.970786"], ["updated_at", "2022-01-13 00:45:11.970786"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for ::1 at 2022-01-12 18:45:22 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting =>
+...    render json: {user: {@user, only: [:id, :username]}, tok...
+...                              ^
+/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+...{@user, only: [:id, :username]}, token: JWT.encode({user_id:...
+...                              ^
+/Users/jeburks/Desktop/projects/rails-drinkin-buddy/app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+...id: @user.id}, ENV["JWT_KEY"])}, status: :created, location:...
+...                              ^
+):
+  
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting =>
+app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected ',', expecting =>
+app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected '}', expecting `end'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Jobu"], ["password_digest", "$2a$12$L0OvBDLV4700VWSCnmLwgOeWv5V/k5Rc7yes6RXj/RDmZaZjl8ZGG"], ["created_at", "2022-01-13 00:46:47.178958"], ["updated_at", "2022-01-13 00:46:47.178958"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for ::1 at 2022-01-12 18:46:55 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Megan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Megan"], ["password_digest", "$2a$12$L.PA5HgIA8dm1HQGZ48QsuOqVZz.0fKdfrdTyWppDAV9BPuSJMbw6"], ["created_at", "2022-01-13 00:46:55.610840"], ["updated_at", "2022-01-13 00:46:55.610840"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 275ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 9353)
+
+
+Started POST "/users" for ::1 at 2022-01-12 18:47:13 -0600
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Megan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Megan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 297ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 3455)
+
+
+Started GET "/beers" for ::1 at 2022-01-12 19:05:46 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:06:12 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:07:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:07:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:07:38 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:08:16 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:08:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:10:46 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/get_user" for ::1 at 2022-01-12 19:42:10 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (Allocations: 140)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/beers" for ::1 at 2022-01-12 19:46:41 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:47:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/beers" for ::1 at 2022-01-12 19:47:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/beers"):
+  
+Started GET "/get_user" for ::1 at 2022-01-12 19:57:01 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 95)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started POST "/users" for ::1 at 2022-01-12 20:53:23 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"joseph", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "joseph"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "joseph"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "joseph"], ["password_digest", "$2a$12$58KGfeaPrZEfz7i7BYvIJenRu0rCI1AN/42wgEPI8zefs4P3fziwi"], ["created_at", "2022-01-13 02:53:23.524004"], ["updated_at", "2022-01-13 02:53:23.524004"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 285ms (Views: 0.6ms | ActiveRecord: 6.5ms | Allocations: 6143)
+
+
+Started POST "/users" for ::1 at 2022-01-12 20:55:50 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Bob", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Bob"], ["password_digest", "$2a$12$OZqWOaCwCxQs3sc/Syfd3ehJWZWdbjU6LvRLHA4tjx5qw/8NbeSTC"], ["created_at", "2022-01-13 02:55:50.868049"], ["updated_at", "2022-01-13 02:55:50.868049"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 300ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 3106)
+
+
+Started POST "/users" for ::1 at 2022-01-12 21:02:31 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Billy", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Billy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Billy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Billy"], ["password_digest", "$2a$12$FAzz04P1drd4qvLVNTenW.tFbGj9spY.djnEvLjyMyxPPNN3.YyRq"], ["created_at", "2022-01-13 03:02:32.145042"], ["updated_at", "2022-01-13 03:02:32.145042"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 307ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 3659)
+
+
+Started POST "/users" for ::1 at 2022-01-12 21:06:34 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"jim", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jim"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jim"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "jim"], ["password_digest", "$2a$12$rtY/6JV7j2Vt.lXS9/gIGeJGF3Lg80yBkgFRx11KVgJ3W.HREVtPq"], ["created_at", "2022-01-13 03:06:34.568621"], ["updated_at", "2022-01-13 03:06:34.568621"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 201 Created in 311ms (Views: 1.3ms | ActiveRecord: 3.0ms | Allocations: 3085)
+
+
+Started GET "/get_user" for ::1 at 2022-01-12 21:06:34 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 96)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started POST "/login" for ::1 at 2022-01-13 14:31:11 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3977)
+
+
+Started POST "/login" for ::1 at 2022-01-13 14:31:42 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 289ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 3346)
+
+
+Started GET "/get_user" for ::1 at 2022-01-13 14:31:42 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 100)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:03 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 114)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:32 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 96)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:33 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 96)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:35 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:38 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:43 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:46 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:49 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:32:52 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:33:00 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:33:25 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started POST "/login" for ::1 at 2022-01-13 14:33:37 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"jim", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jim"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 301ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 708)
+
+
+Started POST "/login" for ::1 at 2022-01-13 14:33:55 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"jim", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jim"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 302ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 798)
+
+
+Started GET "/get_user" for ::1 at 2022-01-13 14:33:55 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:34:22 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:34:26 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:34:32 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:34:34 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:34:48 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:34:50 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:35:29 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:36:45 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started POST "/users" for ::1 at 2022-01-13 14:37:00 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 307ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2568)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:37:47 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 313ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 1470)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:43:35 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 303ms (Views: 1.7ms | ActiveRecord: 1.0ms | Allocations: 1956)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:45:57 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1393)
+
+
+Started GET "/get_user" for ::1 at 2022-01-13 14:48:35 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-01-13 14:48:36 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started POST "/users" for ::1 at 2022-01-13 14:48:48 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 13ms (Views: 4.3ms | ActiveRecord: 1.0ms | Allocations: 1684)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:50:04 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 299ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1391)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:50:41 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 302ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 1390)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:52:39 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 16ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 1643)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:52:47 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1391)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:53:08 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1390)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:55:10 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 1391)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:55:57 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 302ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1394)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:56:32 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1390)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:57:09 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 1394)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:57:36 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 301ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1391)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:58:08 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 18ms (Views: 10.0ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started POST "/users" for ::1 at 2022-01-13 14:58:13 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Completed 422 Unprocessable Entity in 303ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 1390)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:13:27 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 296ms (Views: 1.2ms | ActiveRecord: 3.6ms | Allocations: 1216)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:14:36 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 304ms (Views: 0.8ms | ActiveRecord: 1.5ms | Allocations: 762)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:15:31 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 298ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 761)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:17:06 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 297ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 761)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:18:33 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 267ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 3787)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:26:41 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 299ms (Views: 0.5ms | ActiveRecord: 2.6ms | Allocations: 1139)
+
+
+Started POST "/login" for ::1 at 2022-01-18 18:53:48 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 296ms (Views: 0.8ms | ActiveRecord: 4.4ms | Allocations: 1139)
+
+
+Started POST "/login" for ::1 at 2022-02-09 17:23:42 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 272ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 6683)
+
+
+Started POST "/login" for ::1 at 2022-02-09 17:34:18 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 287ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1162)
+
+
+Started POST "/login" for ::1 at 2022-02-09 17:37:34 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 300ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 705)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 17:52:02 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 102)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-02-09 17:52:06 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 113)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-02-09 17:52:47 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 0ms (Allocations: 127)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-02-09 17:53:26 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 259779ms (Allocations: 144651)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `logged_in?'
+app/controllers/application_controller.rb:18:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-02-09 17:57:46 -0600
+Started GET "/get_user" for ::1 at 2022-02-09 17:57:47 -0600
+Processing by UsersController#get_user as HTML
+Completed 500 Internal Server Error in 91585ms (Allocations: 19148509)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:18:in `logged_in?'
+Started GET "/get_user" for ::1 at 2022-02-09 17:59:19 -0600
+Started GET "/get_user" for ::1 at 2022-02-09 17:59:19 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 500 Internal Server Error in 6847ms (ActiveRecord: 4.0ms | Allocations: 10274)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+Processing by UsersController#get_user as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"user"=>{}}
+Processing by UsersController#get_user as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"user"=>{}}
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 500 Internal Server Error in 12807ms (ActiveRecord: 3.8ms | Allocations: 26342)
+
+
+Completed 500 Internal Server Error in 23588ms (ActiveRecord: 1.0ms | Allocations: 47764)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:00:00 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 500 Internal Server Error in 49109ms (ActiveRecord: 0.6ms | Allocations: 539011)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:01:23 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 20746ms (Views: 3.6ms | ActiveRecord: 8.0ms | Allocations: 645906)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:01:44 -0600
+Started GET "/get_user" for ::1 at 2022-02-09 18:01:44 -0600
+Started GET "/get_user" for ::1 at 2022-02-09 18:01:44 -0600
+Started GET "/get_user" for ::1 at 2022-02-09 18:01:44 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Processing by UsersController#get_user as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  Parameters: {"user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Processing by UsersController#get_user as HTML
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Parameters: {"user"=>{}}
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 500 Internal Server Error in 97420ms (ActiveRecord: 0.8ms | Allocations: 172031)
+
+
+Completed 500 Internal Server Error in 97439ms (ActiveRecord: 0.4ms | Allocations: 257628)
+
+
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 500 Internal Server Error in 111106ms (ActiveRecord: 0.4ms | Allocations: 10136244)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:04:32 -0600
+Completed 500 Internal Server Error in 133549ms (ActiveRecord: 4.3ms | Allocations: 72027509)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `get_user'
+app/controllers/users_controller.rb:35:in `get_user'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 44ms (Views: 2.7ms | ActiveRecord: 5.4ms | Allocations: 479174)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:04:45 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 5531)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:06:17 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 664)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:07:20 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 664)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:07:21 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 664)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:07:28 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 664)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:07:33 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:07:34 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 647)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:08:45 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 2.7ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:08:47 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:08:51 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:08:58 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:09:41 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:09:42 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:09:47 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:09:54 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:10:05 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:14:06 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:14:42 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 121)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:15:32 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:15:38 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:15:43 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:15:44 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:17:09 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:17:29 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:10 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:30 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:34 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:42 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:44 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:47 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:50 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:53 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:18:57 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:02 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:04 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:06 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:11 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:22 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:23 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:31 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:35 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:45 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:19:56 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:20:14 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:20:16 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started POST "/login" for ::1 at 2022-02-09 18:20:26 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 304ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 1403)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:21:19 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 683)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:21:23 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:21:25 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:21:34 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 647)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:21:40 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:25:28 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:25:31 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:25:34 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.9ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:27:29 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:27:34 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:27:47 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:27:52 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:27:54 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 646)
+
+
+Started GET "/get_user" for ::1 at 2022-02-09 18:28:00 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:30:54 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:31:19 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:31:26 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:31:29 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:31:38 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:31:48 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:32:13 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:32:26 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started GET "/get_user" for ::1 at 2022-02-09 18:32:28 -0600
+Processing by UsersController#get_user as HTML
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/users_controller.rb:34:in `get_user'
+Started POST "/login" for ::1 at 2022-02-09 18:32:37 -0600
+Processing by UsersController#log_in as HTML
+  Parameters: {"user"=>{"username"=>"Jobu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `log_in'
+Completed 200 OK in 301ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 686)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220112232934)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "is_maker?" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220112232934"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-23 23:46:14.535351"], ["updated_at", "2022-02-23 23:46:14.535351"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220112232934)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "is_maker?" boolean, "name" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220112232934"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-23 23:49:28.212349"], ["updated_at", "2022-02-23 23:49:28.212349"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jobu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Karbach"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "is_maker?", "name", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Karbach"], ["password_digest", "$2a$12$Mt.lYTzGHTUyVftoCFq3serBFOZT.wGBnz9bJLBSLd/TQLxitxrt."], ["is_maker?", 1], ["name", "Karbach Brewing Company"], ["address", "2032 Karbach St, Houston, TX 77092"], ["created_at", "2022-02-24 00:09:16.298176"], ["updated_at", "2022-02-24 00:09:16.298176"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for ::1 at 2022-02-23 18:09:52 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+Exception (You must be logged in to make this request.):
+  
+app/controllers/application_controller.rb:12:in `rescue in current_user'
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:17:in `logged_in?'
+Started GET "/favicon.ico" for ::1 at 2022-02-23 18:09:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-02-23 18:09:58 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jeburks/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jeburks/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.5ms | Allocations: 182)
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 1967)
+
+
+Started GET "/users" for ::1 at 2022-02-24 16:49:08 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+Completed 200 OK in 26ms (Views: 7.5ms | ActiveRecord: 1.4ms | Allocations: 7662)
+
+

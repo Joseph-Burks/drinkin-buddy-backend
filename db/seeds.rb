@@ -1,8 +1,8 @@
 User.destroy_all
 
-joe = User.create(username: 'Jobu', password: 'password', is_maker?: false)
+joe = User.create!(username: 'Jobu', password: 'password', is_maker?: false)
 
-karbach = User.create(
+karbach = User.create!(
     username: 'Karbach',
     password: 'password',
     is_maker?: true,

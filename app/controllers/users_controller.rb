@@ -16,9 +16,25 @@ class UsersController < ApplicationController
     if @user && @user.valid?
       @user.save
       if @user.is_maker?
-        render json: {user: {id: @user.id, username: @user.username, isMaker:@user.is_maker?, name: @user.name, address: @user.address}, token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])}, status: :created, location: @user
+        render json: {
+          user: {
+            id: @user.id,
+            username: @user.username,
+            isMaker:@user.is_maker?,
+            name: @user.name,
+            address: @user.address
+          },
+          token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
+        }, status: :created, location: @user
       else
-        render json: {user: {id: @user.id, username: @user.username, isMaker:@user.is_maker?}, token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])}, status: :created, location: @user
+        render json: {
+          user: {
+            id: @user.id,
+            username: @user.username,
+            isMaker: @user.is_maker?
+          },
+          token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
+        }, status: :created, location: @user
       end
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -29,10 +45,27 @@ class UsersController < ApplicationController
     @user = User.find_by(username: user_params[:username])
     if @user && @user.authenticate(user_params[:password])
       if @user.is_maker?
-        render json: {user: {id: @user.id, username: @user.username, is_maker?:@user.is_maker?, name: @user.name}, token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])}, status: :created, location: @user
+        render json: {
+          user: {
+            id: @user.id,
+            username: @user.username,
+            isMaker:@user.is_maker?,
+            name: @user.name,
+            address: @user.address
+          },
+          token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
+        }, status: :created, location: @user
       else
-        render json: {user: {id: @user.id, username: @user.username, is_maker?:@user.is_maker?}, token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])}, status: :created, location: @user
-      end    else
+        render json: {
+          user: {
+            id: @user.id,
+            username: @user.username,
+            is_maker?:@user.is_maker?
+          },
+          token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
+        }, status: :created, location: @user
+      end
+    else
       render json: {error: 'Invalid creditials.'}
     end
   end

@@ -4,8 +4,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :username
       t.string :password_digest
       t.boolean :is_maker?
-      t.string :name
-      t.string :address
       
       t.timestamps
     end

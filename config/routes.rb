@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :breweries
+  resources :beers
   post '/login', to: 'users#log_in'
   get '/get_user', to: 'users#get_user'
   resources :users

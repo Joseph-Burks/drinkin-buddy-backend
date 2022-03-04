@@ -25,9 +25,15 @@ ActiveRecord::Schema.define(version: 2022_03_03_011453) do
 
   create_table "breweries", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.string "country"
+    t.string "longitude"
+    t.string "latitude"
+    t.string "phone"
     t.string "url"
-    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,7 +50,6 @@ ActiveRecord::Schema.define(version: 2022_03_03_011453) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.boolean "is_maker?"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

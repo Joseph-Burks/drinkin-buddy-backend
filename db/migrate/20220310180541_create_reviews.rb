@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.integer :beer_id
       t.integer :rating
       t.text :note
-
+      
       t.timestamps
     end
   end

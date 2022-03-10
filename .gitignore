@@ -1,2 +1,3 @@
 *.log
-!spec/*.log
+!spec/*.loglog/development.log
+.env

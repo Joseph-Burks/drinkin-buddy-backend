@@ -10,7 +10,7 @@ class BreweriesController < ApplicationController
 
   # GET /breweries/1
   def show
-    render json: @brewery
+    render json: @brewery, include: [:beers]
   end
 
   # POST /breweries
@@ -46,6 +46,8 @@ class BreweriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def brewery_params
-      params.fetch(:brewery, {})
+      params.require(:brewery).permit(:name, :street, :city, :state, :postal_code, :country, :longitude, :latitude, :phone, :url)
     end
 end
+
+

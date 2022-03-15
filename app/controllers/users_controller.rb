@@ -38,13 +38,17 @@ class UsersController < ApplicationController
         token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
       }, status: :created, location: @user
     else
-      render json: {error: 'Invalid creditials.'}
+      render json: {error: 'Invalid creditials.'}, status: :unprocessable_entity
     end
   end
 
   def get_user
     @user = self.current_user
-    render json: @user, only: [:id, :username]
+    if @user
+      render json: @user, only: [:id, :username]
+    else
+      render json: {error: 'Token Invalid.'}, status: :unprocessable_entity
+    end
   end
 
   def update

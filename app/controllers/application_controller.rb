@@ -4,9 +4,9 @@ class ApplicationController < ActionController::API
     def current_user
         begin
             method, token = request.headers[:Authorization].split(' ')
+            puts token
             if method === 'Bearer'
                 payload, header = JWT.decode(token, ENV["JWT_KEY"])
-                puts payload['user_id']
                 return User.find(payload['user_id'])
             end
         rescue

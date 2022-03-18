@@ -10,7 +10,7 @@ class BeersController < ApplicationController
 
   # GET /beers/1
   def show
-    render json: @beer, include: [:brewery, :style, :reviews]
+    render json: @beer, include: [:brewery, :reviews]
   end
 
   # POST /beers
@@ -18,7 +18,7 @@ class BeersController < ApplicationController
     @beer = Beer.new(beer_params)
 
     if @beer.save
-      render json: @beer, status: :created, location: @beer
+      render json: @beer, include: [:brewery, :reviews], status: :created, location: @beer
     else
       render json: @beer.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class BeersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def beer_params
-      params.fetch(:beer, {})
+      params.require(:beer).permit(:name, :brewery_id, :style, :description, :alcohol_content, :bitterness)
     end
 end

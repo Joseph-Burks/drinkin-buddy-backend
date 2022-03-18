@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_03_10_180541) do
   create_table "beers", force: :cascade do |t|
     t.string "name"
     t.integer "brewery_id"
-    t.string "style_id"
+    t.string "style"
     t.string "description"
     t.float "alcohol_content"
     t.integer "bitterness"
@@ -43,12 +43,6 @@ ActiveRecord::Schema.define(version: 2022_03_10_180541) do
     t.integer "beer_id"
     t.integer "rating"
     t.text "note"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "styles", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

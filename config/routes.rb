@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :reviews
   resources :beers
-  resources :styles
   resources :breweries
   post '/login', to: 'users#log_in'
   get '/get_user', to: 'users#get_user'

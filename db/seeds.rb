@@ -22,66 +22,13 @@ breweries.each do |b|
 
 end
 
-styles = [
-    {
-        name: 'Kolche'
-    },
-    {
-        name: 'Light Lager'
-    },
-    {
-        name: 'Wheat Ale'
-    },
-    {
-        name: 'India Pale Ale'
-    },
-    {
-        name: 'Bock'
-    },
-    {
-        name: 'American Lager'
-    },
-    {
-        name: 'Double India Pale Ale'
-    },
-    {
-        name: 'Pilsner'
-    },
-    {
-        name: 'Hazy India Pale Ale'
-    },
-    {
-        name: 'Non-Alcoholic'
-    },
-    {
-        name: 'Golden Strong Ale'
-    },
-    {
-        name: 'Strawberry Blonde'
-    },
-    {
-        name: 'Summer Ale'
-    },
-    {
-        name: 'Bavarian-Style Marzen'
-    },
-    {
-        name: 'Red Ale'
-    },
-    
-]
-
-styles.each do |s|
-    Style.create!(name: s[:name])
-end
-
 karbach = Brewery.find_by(name: 'Karbach Brewing Co')
 
 beers = [
     {
         name: 'Love Street Blonde',
         brewery: karbach,
-        style: Style.find_by(name: 'Kolche'),
+        style: 'Kolche',
         description: "In the 1960's on Allen's Landing sat Love Street; a hot spot of music and social impact. The venue    hosted eclectic characters ranging from open mic'ers to the Lizard King himself. Love Street was not only a place, but a state of mind. A place to unwind and let the music refresh your soul.Likewise, Love Street is a state of mind. Brewed in the Kolsch-style and hopped delicately with floral German hops, this beer boasts a clean malt profile that refreshes to the core, without sacrificing character. So crack one open and find your own Love Street.",
         alcohol_content: 4.9,
         bitterness: 16
@@ -89,7 +36,7 @@ beers = [
     {
         name: 'Love Street Light',
         brewery: karbach,
-        style: Style.find_by(name: 'Light Lager'),
+        style: 'Light Lager',
         description: "On groovy days when the breeze is blowing and the music is playing, a nice crisp Blonde delicately hopped with floral German hops is your kind of nirvana. Love Street Light brings you all of the fresh flavors of a fantastic Blonde with fewer calories to keep you light on your feet well into the night. So gather up the group and crack open a Love Street Light for the perfect opener, headliner, or encore of any occasion. It's a whole lotta love with less calories, and fewer carbs.",
         alcohol_content: 4.2,
         bitterness: 10
@@ -97,7 +44,7 @@ beers = [
     {
         name: 'Love Street Citrus',
         brewery: karbach,
-        style: Style.find_by(name: 'Wheat Ale'),
+        style: 'Wheat Ale',
         description: "Love Street Citrus is overflowing with sun rays and happy days. This easy-drinking, easy-living wheat beer delivers a sweet sip of sunshine thanks to a perfect squeeze of orange to brighten the soul. Get down and vibe with the beautiful blend of delicate floral German hops in perfect harmony with smooth, refreshing citrus flavors sure to get your tongue dancing and your body groovin'.",
         alcohol_content: 4.6,
         bitterness: 10
@@ -105,7 +52,7 @@ beers = [
     {
         name: 'Hopadillo IPA',
         brewery_id: karbach,
-        style: Style.find_by(name: 'India Pale Ale'),
+        style: 'India Pale Ale',
         description: "He lurks in the shadows, waiting in bold anticipation. He's surprisingly bitter. Bitter about something. Legend has it that he feasts on those with fresh hops coursing through their veins. This dry-hopped, Texas IPA has a flavor as defiant as the Hopadillo himself. It's packed with the bracing bitterness of hops from around the world that this creature craves. He's comin' to get ya. You've been warned...",
         alcohol_content: 6.6,
         bitterness: 65
@@ -113,7 +60,7 @@ beers = [
     {
         name: 'Crawford Bock',
         brewery: karbach,
-        style: Style.find_by(name: 'Bock'),
+        style: 'Bock',
         description: "What's even easier than jacking a dinger into the Crawford Boxes? How about cracking open a delicious Crawford Bock? Karbach Crawford Bock is so smooth you can easily stretch that single into a double. Pairs perfectly with peanuts, stadium dogs, and a good 7th inning stretch! A portion of proceeds from every Crawford Bock go to the Astros Foundation!",
         alcohol_content: 4.5,
         bitterness: 15
@@ -121,7 +68,7 @@ beers = [
     {
         name: 'Clutch City Lager',
         brewery: karbach,
-        style: Style.find_by(name: 'American Lager'),
+        style: 'American Lager',
         description: "Step into the arena, cold beer flowing, the aroma of fresh popcorn and the sound of sneakers on the court bring back euphoric championship memories. From hard fought series to clean sweeps, these moments brought us together then and now. Clutch City Lager is the perfect complement to our legacy of basketball greatness in Houston. Raise your beer and salute the Rockets' legends then and now, and whatever you do, never underestimate the heart of a champion. A portion of the proceeds benefit the Clutch City Foundation.",
         alcohol_content: 4,
         bitterness: 20
@@ -129,7 +76,7 @@ beers = [
     {
         name: 'Rodeo Clown Double IPA',
         brewery: karbach,
-        style: Style.find_by(name: 'Double India Pale Ale'),
+        style: 'Double India Pale Ale',
         description: "It's a job! And a hazardous one at that. Benefits, you ask? I hardly think so. But the show must go on. So, it's with bravado that the Rodeo Clown takes his place in the arena lights. Whether or not he's insane is not important right now. It's with grit and intensity that the Clown steps in the path of almost certain destruction.",
         alcohol_content: 9.5,
         bitterness: 85
@@ -137,7 +84,7 @@ beers = [
     {
         name: 'Horseshoe',
         brewery: karbach,
-        style: Style.find_by(name: 'Pilsner'),
+        style: 'Pilsner',
         description: "What do ya get when the most famous Pitmaster in Texas makes some magic with the best Brewmaster in the Lone Star State? You get Horseshoe, a light, refreshing, German-style pilsner brewed for BBQ, yard sports, and the Hot Luck Live Food & Music Festival. And for every Horseshoe sold, we'll donate a portion of the proceeds to the Southern Smoke Foundation, a charity that supports service industry workers. So kick back and give back!",
         alcohol_content: 4.5,
         bitterness: 30
@@ -145,7 +92,7 @@ beers = [
     {
         name: 'Light Circus Hazy IPA',
         brewery: karbach,
-        style: Style.find_by(name: 'Hazy India Pale Ale'),
+        style: 'Hazy India Pale Ale',
         description: "Karbach's Light Circus is a feel good machine churning out dreamy flavor from hoppy, to fruity, to tropical, and back again. This hazy IPA radiates positive vibes so you can chill out with the zonk-outs and remember that time you enjoy wasting is never time wasted.",
         alcohol_content: 6,
         bitterness: 20
@@ -153,7 +100,7 @@ beers = [
     {
         name: 'Free & Easy NA IPA',
         brewery: karbach,
-        style: Style.find_by(name: 'Non-Alcoholic'),
+        style: 'Non-Alcoholic',
         description: "Just because you're takin' it easy doesn't mean you can't have a good time. With Free & Easy, there's no invitation required and everyone's invited. Kick back, relax, and enjoy the bursting hop aromas of orange zest, grapefruit, and citrus while taking in the smooth sweetness and balanced bitterness of this delicious NA IPA.",
         alcohol_content: 0.05,
         bitterness: 35
@@ -161,7 +108,7 @@ beers = [
     {
         name: 'Brewsanity',
         brewery: karbach,
-        style: Style.find_by(name: 'Golden Strong Ale'),
+        style: 'Golden Strong Ale',
         description: "Step right up and see the amazing force and powerful punch of flavors behind Brewsanity Golden Strong Ale. Insanely delicious and incredibly bold, this Belgian-style ale boasts clean malt flavors with a touch of wildflower honey combined with spicy and fruity aromatics leading to a refreshingly dry finish. Its size commands the attention of its audience and offers a delightful departure from the ordinary.",
         alcohol_content: 8.5,
         bitterness: 35
@@ -169,7 +116,7 @@ beers = [
     {
         name: 'Strawberry Fields',
         brewery: karbach,
-        style: Style.find_by(name: 'Strawberry Blonde'),
+        style: 'Strawberry Blonde',
         description: "We're on a trip down to Strawberry Fields where the flavor is real. And by real, we mean reallll good! Escape to Strawberry Fields forever with this light bodied blonde ale that celebrates the bright aromas and sweetness of sun-ripened strawberries complimented by mild, malty notes. There's nothing to get hung up about here when enjoying our Strawberry Blonde. Available Mid February - May",
         alcohol_content: 5.2,
         bitterness: 12
@@ -177,7 +124,7 @@ beers = [
     {
         name: 'Tasty Waves',
         brewery: karbach,
-        style: Style.find_by(name: 'Summer Ale'),
+        style: 'Summer Ale',
         description: "Karbach's Tasty Waves is the Summer Ale that majorly rules. All citrus and breezy, not bogus or cheesy - and the perfect kiss of sea salt and fruit that won't harsh your mellow. For primo summer vibes all you need is some Tasty Waves, some cool buds, and you'll be just fine! Available: May - August",
         alcohol_content: 4.9,
         bitterness: 15
@@ -185,7 +132,7 @@ beers = [
     {
         name: 'Karbachtoberfest',
         brewery: karbach,
-        style: Style.find_by(name: 'Bavarian-Style Marzen'),
+        style: 'Bavarian-Style Marzen',
         description: "Every year in Munich a little party is thrown. If you've ever been, there are some things you may or may not remember: Lederhosen envy, oompah music, dirndls, and rolling down the hill. One thing you surely haven't forgotten is the extremely quaffable beer! While you may not be able to attend Oktoberfest this year, you can experience the world's biggest beer festival right here with Karbachtoberfest! An authentic, Bavarian-style Marzen, decoction mashed with Vienna and Munich malts, cold fermented and aged for six weeks, this beer pairs well with pretzels and sausage, but it tastes mighty fine on it's own. Available: Mid August - October",
         alcohol_content: 5.5,
         bitterness: 25
@@ -193,7 +140,7 @@ beers = [
     {
         name: 'Yule Shoot Your Eye Out',
         brewery: karbach,
-        style: Style.find_by(name: 'Red Ale'),
+        style: 'Red Ale',
         description: "Just like the old man's “major award,” our seasonal red ale will light up the neighborhood. Loaded with smooth caramel malt and a citrus twist, we triple-dog dare you to find a better holiday ale. Ohhhh fuuudge, it's only here for a limited time! Available: Late October - December",
         alcohol_content: 5.6,
         bitterness: 18

@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def get_user
     @user = self.current_user
     if @user
-      render json: @user, only: [:id, :username]
+      render json: @user, only: [:id, :username], include: [:beers, ]
     else
       render json: {error: 'Token Invalid.'}, status: :unprocessable_entity
     end

@@ -33,7 +33,9 @@ class UsersController < ApplicationController
       render json: {
         user: {
           id: @user.id,
-          username: @user.username
+          username: @user.username,
+          reviews: @user.reviews,
+          interested_beers: @user.interested_beers
         },
         token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
       }, status: :created, location: @user
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
   def get_user
     @user = self.current_user
     if @user
-      render json: @user, only: [:id, :username], include: [:beers, ]
+      render json: @user, only: [:id, :username], include: [:reviews, :interested_beers]
     else
       render json: {error: 'Token Invalid.'}, status: :unprocessable_entity
     end

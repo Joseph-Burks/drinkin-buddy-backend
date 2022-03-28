@@ -1,5 +1,8 @@
-User.destroy_all
+Review.destroy_all
+Interest.destroy_all
+Beer.destroy_all
 Brewery.destroy_all
+User.destroy_all
 
 joe = User.create!(username:  'Jobu', password: 'password')
 
@@ -157,5 +160,9 @@ beers.each do |b|
         bitterness: b[:bitterness]
     )
 end
+
+Interest.create!(user: joe, beer: Beer.first)
+
+Review.create!(user: joe, beer: Beer.last, rating: 5, note: 'Something whitty about how a beer tastes and when and where it could potentially be enjoyed.')
 
 puts 'Seeded'

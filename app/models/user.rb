@@ -17,7 +17,8 @@ class User < ApplicationRecord
                 id: review.id,
                 rating: review.rating,
                 note: review.note,
-                beer: review.beer
+                beer: review.beer,
+                created: review.created_at
             }
             revs.push(rev)
         end

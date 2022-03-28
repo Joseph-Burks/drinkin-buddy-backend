@@ -9,4 +9,18 @@ class User < ApplicationRecord
     
     validates :username, {presence: true, uniqueness: true}
     validates :password, length: {in: 6..20}
+
+    def get_reviews_with_beer
+        revs = []
+        self.reviews.each do |review|
+            rev = {
+                id: review.id,
+                rating: review.rating,
+                note: review.note,
+                beer: review.beer
+            }
+            revs.push(rev)
+        end
+        revs
+    end
 end

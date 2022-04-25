@@ -1,5 +1,5 @@
 class InterestsController < ApplicationController
-  before_action :set_interest, only: [:show, :update, :destroy]
+  before_action :set_interest, only: [:show, :update]
 
   # GET /interests
   def index
@@ -18,7 +18,13 @@ class InterestsController < ApplicationController
     @interest = Interest.new(beer_id: interest_params[:beer_id], user_id: current_user.id)
 
     if @interest.save
-      render json: @interest, status: :created, location: @interest
+      @user = current_user
+      render json: {
+          id: @user.id,
+          username: @user.username,
+          reviews: @user.get_reviews_with_beer,
+          interests: @user.interested
+        }
     else
       render json: @interest.errors, status: :unprocessable_entity
     end
@@ -35,7 +41,15 @@ class InterestsController < ApplicationController
 
   # DELETE /interests/1
   def destroy
-    @interest.destroy
+  interest = Interest.find_by(beer_id: interest_params[:beer_id], user_id: current_user.id)
+  interest.destroy
+  @user = current_user
+  render json: {
+          id: @user.id,
+          username: @user.username,
+          reviews: @user.get_reviews_with_beer,
+          interests: @user.interested
+        }
   end
 
   private

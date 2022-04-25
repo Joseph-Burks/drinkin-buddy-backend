@@ -29,9 +29,7 @@ class UsersController < ApplicationController
 
   def log_in
     @user = User.find_by(username: user_params[:username])
-    puts 'here first'
     if @user && @user.authenticate(user_params[:password])
-      puts 'here second'
       render json: {
         user: {
           id: @user.id,

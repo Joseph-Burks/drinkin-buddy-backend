@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/interests/remove', to: 'interests#destroy'
   resources :interests
   resources :reviews
   resources :beers

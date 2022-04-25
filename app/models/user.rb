@@ -24,4 +24,18 @@ class User < ApplicationRecord
         end
         revs
     end
+
+    def interested
+        ints = []
+        self.interested_beers.each do |beer|
+            int = {
+                id: beer.id,
+                name: beer.name,
+                brewery: beer.brewery.name,
+                brewery_id: beer.brewery.id,
+            }
+            ints.push(int)
+        end
+        ints
+    end
 end

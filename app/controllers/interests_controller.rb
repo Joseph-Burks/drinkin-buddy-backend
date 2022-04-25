@@ -15,7 +15,7 @@ class InterestsController < ApplicationController
 
   # POST /interests
   def create
-    @interest = Interest.new(interest_params)
+    @interest = Interest.new(beer_id: interest_params[:beer_id], user_id: current_user.id)
 
     if @interest.save
       render json: @interest, status: :created, location: @interest
@@ -46,6 +46,6 @@ class InterestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def interest_params
-      params.fetch(:interest, {})
+      params.require(:interest).permit(:beer_id, :user_id)
     end
 end

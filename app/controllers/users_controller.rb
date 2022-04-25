@@ -37,7 +37,7 @@ class UsersController < ApplicationController
           id: @user.id,
           username: @user.username,
           reviews: @user.get_reviews_with_beer,
-          interested_beers: @user.interested_beers
+          interested_beers: @user.interested_beers.limit(10)
         },
         token: JWT.encode({user_id: @user.id}, ENV["JWT_KEY"])
       }, status: :created, location: @user

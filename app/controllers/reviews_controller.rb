@@ -18,7 +18,13 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      @user = current_user
+      render json: {
+          id: @user.id,
+          username: @user.username,
+          reviews: @user.get_reviews_with_beer,
+          interests: @user.interested
+        }
     else
       render json: @review.errors, status: :unprocessable_entity
     end

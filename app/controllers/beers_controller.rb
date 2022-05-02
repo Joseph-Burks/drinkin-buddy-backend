@@ -5,7 +5,7 @@ class BeersController < ApplicationController
   def index
     @beers = Beer.all
 
-    render json: @beers
+    render json: @beers, include: [:brewery]
   end
 
   # GET /beers/1

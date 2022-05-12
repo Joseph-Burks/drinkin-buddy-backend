@@ -17,4 +17,12 @@ class ApplicationController < ActionController::API
     def logged_in?
         !!current_user
     end
+
+    def delete_interest(beer_id)
+        user = current_user
+        interest = Interest.find_by(user_id: user.id, beer_id: beer_id.to_i)
+        if interest
+            interest.destroy
+        end
+    end
 end

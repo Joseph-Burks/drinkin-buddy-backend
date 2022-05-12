@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
+      delete_interest(review_params[:beer_id])
       @user = current_user
       render json: {
           id: @user.id,

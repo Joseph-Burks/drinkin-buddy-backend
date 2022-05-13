@@ -4,7 +4,13 @@ class BreweriesController < ApplicationController
   # GET /breweries
   def index
     @breweries = Brewery.all
+    render json: @breweries
+  end
 
+  #GET /breweries-20
+  def first_twenty
+    byebug
+    @breweries = Brewery.first(20)
     render json: @breweries
   end
 
@@ -16,7 +22,6 @@ class BreweriesController < ApplicationController
   # POST /breweries
   def create
     @brewery = Brewery.new(brewery_params)
-
     if @brewery.save
       render json: @brewery, status: :created, location: @brewery
     else

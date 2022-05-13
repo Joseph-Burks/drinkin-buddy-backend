@@ -4,8 +4,13 @@ class BeersController < ApplicationController
   # GET /beers
   def index
     @beers = Beer.all
-
     render json: @beers, include: [:brewery]
+  end
+
+  #GET /beers-20
+  def first_twenty
+    @beers = Beer.first(20)
+    render json: @beers
   end
 
   # GET /beers/1

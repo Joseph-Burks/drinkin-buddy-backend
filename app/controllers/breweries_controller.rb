@@ -9,7 +9,6 @@ class BreweriesController < ApplicationController
 
   #GET /breweries-20
   def first_twenty
-    byebug
     @breweries = Brewery.first(20)
     render json: @breweries
   end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#log_in'
   get '/get_user', to: 'users#get_user'
   get '/breweries-20', to: 'breweries#first_twenty'
+  get '/beers-20', to: 'beers#first_twenty'
   resources :interests
   resources :reviews
   resources :beers
